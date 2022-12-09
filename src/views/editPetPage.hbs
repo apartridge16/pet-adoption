@@ -1,0 +1,45 @@
+<h1>Edit Pet Details</h1>
+{{#with foundPet}}
+  <form action='/pets/edit/{{petId}}' method='POST' class='petForm'>
+    <label for='name'>Enter Pet's Name: </label>
+    <input
+      type='text'
+      name='name'
+      placeholder='Enter Name'
+      value='{{name}}'
+    /><br />
+
+    <label for='description'>Enter Pet Description: </label>
+    <input
+      type='text'
+      name='description'
+      placeholder='Enter Description'
+      value='{{description}}'
+    /><br />
+
+    <label for='imgUrl'>Enter Image URL: </label>
+    <input
+      type='text'
+      name='imgUrl'
+      placeholder='IMG URL Here'
+      value='{{imgUrl}}'
+    /><br />
+
+    <label for='isHouseTrained'>Is this pet housetrained: </label>
+    <input
+      type='text'
+      name='isHouseTrained'
+      placeholder='Yes or No'
+      value='{{isHouseTrained}}'
+    /><br />
+    <button type='submit'>Save</button>
+  </form>
+
+  <form action='/pets/delete/{{petId}}' method='POST'>
+    <button type='submit'>Delete Item</button>
+  </form>
+{{/with}}
+
+<form action='/pets'>
+  <button type='submit'>Home</button>
+</form>

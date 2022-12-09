@@ -1,0 +1,14 @@
+{{#with foundPet}}
+  <div class='child'>
+    <img src='{{imgUrl}}' /><br />
+    <h1>{{name}}</h1>
+    <p>Description: {{description}}</p>
+    <p>Housetrained: {{isHouseTrained}}</p>
+    <form action='/pets/edit/{{petId}}'>
+      <button type='submit'>Edit</button>
+    </form>
+  </div>
+{{/with}}
+<form action='/pets'>
+  <button type='submit'>Home</button>
+</form>

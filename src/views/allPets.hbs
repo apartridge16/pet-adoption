@@ -1,0 +1,28 @@
+<div class='navbar'>
+  <h1>Available Pets to Adopt!</h1>
+  <form action='/pets/add'>
+    <button type='submit' class='addNew'>Add New Pet</button>
+  </form>
+</div>
+
+<div class='parent'>
+  {{#each petsList}}
+    <div class='child'>
+      <img src='{{imgUrl}}' /><br />
+      <h1>{{name}}</h1>
+      <div class='btns'>
+        <form action='/pets/{{petId}}'>
+          <button type='submit'>View Details</button>
+        </form>
+
+        <form action='/pets/edit/{{petId}}'>
+          <button type='submit'>Edit</button>
+        </form>
+
+        <form action='/pets/delete/{{petId}}' method='POST'>
+          <button type='submit'>Delete Item</button>
+        </form>
+      </div>
+    </div>
+  {{/each}}
+</div>
